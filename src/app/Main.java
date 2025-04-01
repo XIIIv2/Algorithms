@@ -17,7 +17,7 @@ public class Main {
         if (position < 0) {
             System.out.printf("Element %d not found in %s.%n", target, Arrays.toString(sortedArray));
         } else {
-            System.out.printf("Search element (%d) in %s: position: %d, value %d%n", target, Arrays.toString(sortedArray), position, sortedArray[position]);
+            System.out.printf("Search element (%d) in %s: position=%d, value=%d%n", target, Arrays.toString(sortedArray), position, sortedArray[position]);
         }
     }
 

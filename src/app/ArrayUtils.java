@@ -72,6 +72,6 @@ public class ArrayUtils {
             }
         }
 
-        return -1;
+        return -(low + 1);
     }
 }
