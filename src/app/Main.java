@@ -16,7 +16,8 @@ public class Main {
         try {
             int target = 7;
             int position = arrayUtils.binarySearch(sortedArray, target);
-            System.out.printf("Search element (%d) in %s: position %d, value %d%n", target, Arrays.toString(sortedArray), position, sortedArray[position]);
+            int value = sortedArray[position];
+            System.out.printf("Search element (%d) in %s: position %d, value %d%n", target, Arrays.toString(sortedArray), position, value);
         } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
         }
