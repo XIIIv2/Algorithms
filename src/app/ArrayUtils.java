@@ -59,13 +59,13 @@ public class ArrayUtils {
 
         while (low <= high) {
             int middleIndex = (low + high) / 2;
-            int middleIndexNumber = array[middleIndex];
+            int middleValue = array[middleIndex];
 
-            if (target == middleIndexNumber) {
+            if (target == middleValue) {
                 return middleIndex;
             }
 
-            if (target < middleIndexNumber) {
+            if (target < middleValue) {
                 high = middleIndex - 1;
             } else {
                 low = middleIndex + 1;
