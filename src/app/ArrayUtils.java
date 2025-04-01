@@ -50,7 +50,7 @@ public class ArrayUtils {
         int pos = Arrays.binarySearch(array, target);
 
         if (pos >= 0) {
-            return pos;
+            return array[pos];
         }
 
         throw new NoSuchElementException(String.format("Element \"%d\" not found in %s.", target, Arrays.toString(array)));
