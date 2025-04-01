@@ -1,8 +1,5 @@
 package app;
 
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-
 public class ArrayUtils {
     public int[] mergeSort(int[] arrayA) {
         if (arrayA == null) {
@@ -46,7 +43,7 @@ public class ArrayUtils {
         return result;
     }
 
-    public int binarySearch(int[] array, int target) throws NoSuchElementException {
+    /*public int binarySearch(int[] array, int target) throws NoSuchElementException {
         int pos = Arrays.binarySearch(array, target);
 
         if (pos >= 0) {
@@ -54,5 +51,27 @@ public class ArrayUtils {
         }
 
         throw new NoSuchElementException(String.format("Element \"%d\" not found in %s.", target, Arrays.toString(array)));
+    }*/
+
+    public int binarySearch(int[] array, int target) {
+        int low = 0;
+        int high = array.length - 1;
+
+        while (low <= high) {
+            int middleIndex = (low + high) / 2;
+            int middleIndexNumber = array[middleIndex];
+
+            if (target == middleIndexNumber) {
+                return middleIndex;
+            }
+
+            if (target < middleIndexNumber) {
+                high = middleIndex - 1;
+            } else {
+                low = middleIndex + 1;
+            }
+        }
+
+        return -1;
     }
 }
