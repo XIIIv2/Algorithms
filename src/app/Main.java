@@ -1,6 +1,7 @@
 package app;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
         try {
             int position = arrayUtils.binarySearch(sortedArray, 7);
             System.out.printf("Search element (%d) in %s: position %d, value %d%n", 7, Arrays.toString(sortedArray), position, sortedArray[position]);
-        } catch (RuntimeException e) {
+        } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
         }
     }

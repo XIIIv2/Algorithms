@@ -1,6 +1,7 @@
 package app;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class ArrayUtils {
     public int[] mergeSort(int[] arrayA) {
@@ -30,23 +31,28 @@ public class ArrayUtils {
         int positionA = 0;
         int positionB = 0;
 
-        while (positionA < arrayA.length && positionB < arrayB.length)
+        while (positionA < arrayA.length && positionB < arrayB.length) {
             result[i++] = arrayA[positionA] < arrayB[positionB] ? arrayA[positionA++] : arrayB[positionB++];
+        }
 
-        while (positionA < arrayA.length) result[i++] = arrayA[positionA++];
+        while (positionA < arrayA.length) {
+            result[i++] = arrayA[positionA++];
+        }
 
-        while (positionB < arrayB.length) result[i++] = arrayB[positionB++];
+        while (positionB < arrayB.length) {
+            result[i++] = arrayB[positionB++];
+        }
 
         return result;
     }
 
-    public int binarySearch(int[] array, int target) throws RuntimeException {
+    public int binarySearch(int[] array, int target) throws NoSuchElementException {
         int pos = Arrays.binarySearch(array, target);
 
         if (pos >= 0) {
             return pos;
         }
 
-        throw new RuntimeException(String.format("Element \"%d\" not found in %s.", target, Arrays.toString(array)));
+        throw new NoSuchElementException(String.format("Element \"%d\" not found in %s.", target, Arrays.toString(array)));
     }
 }
